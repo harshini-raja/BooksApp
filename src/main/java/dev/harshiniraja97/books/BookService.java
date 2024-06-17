@@ -12,7 +12,7 @@ public class BookService {
       //  System.out.println(bookRepository.findAll().toString());
         return bookRepository.findAll();
     }
-    public Optional<Books> singleBook(ObjectId id){
-        return bookRepository.findById(id);
+    public Optional<Books> singleBook(String isbn){
+        return bookRepository.findBookByisbn(isbn);
     }
 }

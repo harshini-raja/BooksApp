@@ -21,8 +21,8 @@ public class BookController {
     public ResponseEntity<List<Books>> getAllBooks(){
         return new ResponseEntity<List<Books>>(bookService.allBooks(), HttpStatus.OK);
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<Books>> getSingleBook(@PathVariable ObjectId id){
-        return new ResponseEntity<Optional<Books>>(bookService.singleBook(id),HttpStatus.OK);
+    @GetMapping("/{isbn}")
+    public ResponseEntity<Optional<Books>> getSingleBook(@PathVariable String isbn){
+        return new ResponseEntity<Optional<Books>>(bookService.singleBook(isbn),HttpStatus.OK);
     }
 }
